@@ -38,13 +38,13 @@ This extension is the first extension attached to the extension tree. It is resp
 
 #### Inputs
 
-| Name         | Description                | Type                                                                                                                                                   | Optional | Default                                          | Extension creator                                                                                    |
-| ------------ | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| root         | The app root element.      | [coreExtensionData.reactElement](https://backstage.io/docs/reference/frontend-plugin-api.coreextensiondata)                                            | false    | The [`App/Root`](#app-root) extension output.    | No creator available, configure or override the [`App/Root`](#app-root) extension.                   |
-| apis         | The app apis factories.    | [createApiExtension.factoryDataRef](https://backstage.io/docs/reference/frontend-plugin-api.createapiextension.factorydataref)                         | false    | See [default apis](#default-apis-extensions).    | [createApiExtension](https://backstage.io/docs/reference/frontend-plugin-api.createapiextension)     |
-| themes       | The app themes list.       | [createThemeExtension.themeDataRef](https://backstage.io/docs/reference/frontend-plugin-api.createthemeextension.themedataref)                         | false    | See [default themes](#default-theme-extensions). | [createThemeExtension](https://backstage.io/docs/reference/frontend-plugin-api.createthemeextension) |
-| components   | The app components list.   | [createComponentExtension.componentDataRef](https://backstage.io/docs/reference/frontend-plugin-api.createcomponentextension.componentdataref)         | -        | false                                            | See [default components](#defaults-components-extensions).                                           | [createComponentExtension](https://backstage.io/docs/reference/frontend-plugin-api.createcomponentextension)     |
-| translations | The app translations list. | [createTranslationExtension.translationDataRef](https://backstage.io/docs/reference/frontend-plugin-api.createtranslationextension.translationdataref) | -        | false                                            | -                                                                                                    | [createTranslationExtension](https://backstage.io/docs/reference/frontend-plugin-api.createtranslationextension) |
+| Name         | Description                | Type                                                                                                                                                   | Optional | Default                                                    | Extension creator                                                                                                |
+| ------------ | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| root         | The app root element.      | [coreExtensionData.reactElement](https://backstage.io/docs/reference/frontend-plugin-api.coreextensiondata)                                            | false    | The [`App/Root`](#app-root) extension output.              | No creator available, configure or override the [`App/Root`](#app-root) extension.                               |
+| apis         | The app apis factories.    | [createApiExtension.factoryDataRef](https://backstage.io/docs/reference/frontend-plugin-api.createapiextension.factorydataref)                         | false    | See [default apis](#default-apis-extensions).              | [createApiExtension](https://backstage.io/docs/reference/frontend-plugin-api.createapiextension)                 |
+| themes       | The app themes list.       | [createThemeExtension.themeDataRef](https://backstage.io/docs/reference/frontend-plugin-api.createthemeextension.themedataref)                         | false    | See [default themes](#default-theme-extensions).           | [createThemeExtension](https://backstage.io/docs/reference/frontend-plugin-api.createthemeextension)             |
+| components   | The app components list.   | [createComponentExtension.componentDataRef](https://backstage.io/docs/reference/frontend-plugin-api.createcomponentextension.componentdataref)         | false    | See [default components](#defaults-components-extensions). | [createComponentExtension](https://backstage.io/docs/reference/frontend-plugin-api.createcomponentextension)     |
+| translations | The app translations list. | [createTranslationExtension.translationDataRef](https://backstage.io/docs/reference/frontend-plugin-api.createtranslationextension.translationdataref) | false    | -                                                          | [createTranslationExtension](https://backstage.io/docs/reference/frontend-plugin-api.createtranslationextension) |
 
 #### Default theme extensions
 
@@ -91,7 +91,7 @@ Extensions that provides default apis inputs for the `App` extension.
 
 ### App root
 
-This is the extension that creates the app root element, so it renders root level components such as app router, layout.
+This is the extension that creates the app root element, so it renders root level components such as app router and layout.
 
 #### Inputs
 
@@ -179,7 +179,7 @@ Renders a route element for each route received as input and a `NotFoundErrorPag
 Be careful when overriding this extension, as to do so correctly you must consider these implementation requirements:
 
 - The routing system is managed by more than one extension, and they all use 'react-router' behind the scenes and there are also some utilities that are based on the same library like `useRouteRefParams`. Therefore, you cannot use a different library without causing side effects in these other extensions and helper utilities;
-- Don't remove configs or inputs, just extend these things yourself with optional new options, otherwise it will cause breaking changes for extensions like `createPageExtension` that depend on this type of entry, for example;
+- Don't remove configs or inputs, just extend these things yourself with optional new options, otherwise it will cause breaking changes for extensions like `createPageExtension` that depend on this type of inputs;
 - Remember to user the route refs for getting paths dynamically, otherwise if an adopter modifies a path through configuration, the route is not going to point to the configured path.
 - Adopter expects to be able to customize the `NotFoundErrorPage` component via Components API, you should render this component for routes not configured.
 
