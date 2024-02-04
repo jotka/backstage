@@ -1,5 +1,16 @@
 # @backstage/core-plugin-api
 
+## 1.8.3-next.1
+
+### Patch Changes
+
+- 8fe56a8: Widen `@types/react` dependency range to include version 18.
+- Updated dependencies
+  - @backstage/config@1.1.1
+  - @backstage/errors@1.2.3
+  - @backstage/types@1.1.1
+  - @backstage/version-bridge@1.0.7
+
 ## 1.8.3-next.0
 
 ### Patch Changes

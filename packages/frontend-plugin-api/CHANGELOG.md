@@ -1,5 +1,16 @@
 # @backstage/frontend-plugin-api
 
+## 0.6.0-next.2
+
+### Patch Changes
+
+- 8fe56a8: Widen `@types/react` dependency range to include version 18.
+- Updated dependencies
+  - @backstage/core-components@0.14.0-next.1
+  - @backstage/core-plugin-api@1.8.3-next.1
+  - @backstage/types@1.1.1
+  - @backstage/version-bridge@1.0.7
+
 ## 0.6.0-next.1
 
 ### Minor Changes

@@ -1,5 +1,17 @@
 # @backstage/core-app-api
 
+## 1.11.4-next.1
+
+### Patch Changes
+
+- 9aac2b0: Use `--cwd` as the first `yarn` argument
+- 8fe56a8: Widen `@types/react` dependency range to include version 18.
+- Updated dependencies
+  - @backstage/core-plugin-api@1.8.3-next.1
+  - @backstage/config@1.1.1
+  - @backstage/types@1.1.1
+  - @backstage/version-bridge@1.0.7
+
 ## 1.11.4-next.0
 
 ### Patch Changes

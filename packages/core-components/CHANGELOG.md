@@ -1,5 +1,18 @@
 # @backstage/core-components
 
+## 0.14.0-next.1
+
+### Patch Changes
+
+- 8fe56a8: Widen `@types/react` dependency range to include version 18.
+- 214f2da: Fix invalid HTTP status code 501 in Error Page
+- Updated dependencies
+  - @backstage/core-plugin-api@1.8.3-next.1
+  - @backstage/theme@0.5.1-next.0
+  - @backstage/config@1.1.1
+  - @backstage/errors@1.2.3
+  - @backstage/version-bridge@1.0.7
+
 ## 0.14.0-next.0
 
 ### Minor Changes
